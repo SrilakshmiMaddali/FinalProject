@@ -1,0 +1,52 @@
+// If you would like more information on the gradle-appengine-plugin please refer to the github page
+// https://github.com/GoogleCloudPlatform/gradle-appengine-plugin
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.google.cloud.tools:endpoints-framework-gradle-plugin:2.0.0'
+        classpath 'com.google.cloud.tools:appengine-gradle-plugin:1.3.3'
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.google.cloud.tools.appengine'
+apply plugin: 'com.google.cloud.tools.endpoints-framework-server'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+//appengine.tools.cloudSdkHome='/Users/srilakshmimaddali/opt/gcm/google-cloud-sdk'
+
+dependencies {
+    implementation 'com.google.endpoints:endpoints-framework:2.0.14'
+    implementation 'javax.inject:javax.inject:1'
+
+    implementation 'javax.servlet:servlet-api:2.5'
+
+    compile(group: 'com.google.api-client', name: 'google-api-client-android',
+            version: '1.23.0') {
+        // Exclude play services. Explicitly include it above after you have installed Play
+        // services from the Android SDK manager.
+        exclude(group: 'com.google.android.google-play-services', module: 'google-play-services')
+        exclude module: 'guava-jdk5'
+    }
+
+    // Add the Google API client library.
+    compile(group: 'com.google.api-client', name: 'google-api-client', version: '1.23.0') {
+        // Exclude artifacts that the Android SDK/Runtime provides.
+        exclude(group: 'xpp3', module: 'xpp3')
+        exclude(group: 'org.apache.httpcomponents', module: 'httpclient')
+        exclude(group: 'junit', module: 'junit')
+        exclude(group: 'com.google.android', module: 'android')
+        exclude module: 'guava-jdk5'
+    }
+    //implementation 'com.google.http-client:google-http-client-android:1.23.0'
+    implementation project(':JavaJoker')
+}
