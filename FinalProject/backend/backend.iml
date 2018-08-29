@@ -93,10 +93,15 @@
     <orderEntry type="library" exported="" scope="RUNTIME" name="google-http-client-1.23.0" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="jsr305-3.0.1" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="slf4j-nop-1.7.21" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="converter-moshi-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="retrofit-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="moshi-1.6.0" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="slf4j-api-1.7.21" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="swagger-annotations-1.5.9" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="commons-lang3-3.2.1" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="validation-api-1.1.0.Final" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="okhttp-3.10.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="okio-1.14.0" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="httpclient-4.0.1" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="jdo2-api-2.3-eb" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="joda-time-2.2" level="project" />
@@ -143,5 +148,10 @@
     <orderEntry type="library" exported="" scope="TEST" name="commons-logging-1.1.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="commons-codec-1.3" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="transaction-api-1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="converter-moshi-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="retrofit-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="moshi-1.6.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="okhttp-3.10.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="okio-1.14.0" level="project" />
   </component>
 </module>

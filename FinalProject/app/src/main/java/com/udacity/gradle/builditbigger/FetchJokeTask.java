@@ -21,7 +21,7 @@ public class FetchJokeTask extends AsyncTask<Void, Void, JokeData> {
     protected JokeData doInBackground(Void... voids){
         if (myApiService == null) {
         MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-        .setRootUrl("http://" + "76.92.194.49:8080" + "/_ah/api/")
+        .setRootUrl("http://" + "0.0.0.0:8080" + "/_ah/api/")
         .setGoogleClientRequestInitializer(abstractGoogleClientRequest -> abstractGoogleClientRequest.setDisableGZipContent(true));
         myApiService = builder.build();
         }

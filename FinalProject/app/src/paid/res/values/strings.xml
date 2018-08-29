@@ -1,3 +1,7 @@
 <resources>
-    <string name="error_face" translatable="false"/>
+    <string name="error_face" translatable="false">;(</string>
+    <string name="networkerror">Network not available</string>
+    <string name="somethingWrong">Runtime fatal error</string>
+    <string name="error_retrieving_joke">Error retrieving joke</string>
+    <string name="error_displaying_joke">Error in displaying joke</string>
 </resources>

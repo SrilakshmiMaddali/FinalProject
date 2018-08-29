@@ -41,7 +41,7 @@
         android:layout_marginTop="8dp"
         android:indeterminate="true"
         android:visibility="invisible"
-        ads:layout_constraintBottom_toTopOf="@+id/instructions_text_view"
+        ads:layout_constraintBottom_toTopOf="@+id/instructions_tv"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/button_tell_joke" />
@@ -59,7 +59,7 @@
         android:visibility="invisible"
         android:textSize="42sp"
         android:textStyle="bold"
-        ads:layout_constraintBottom_toTopOf="@+id/instructions_text_view"
+        ads:layout_constraintBottom_toTopOf="@+id/instructions_tv"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/button_tell_joke" />

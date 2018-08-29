@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.support.test.espresso.IdlingRegistry;
 import android.support.test.espresso.IdlingResource;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeMatcher;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -26,6 +29,20 @@ public class MainActivityTest {
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
+
+    @Before
+    public void registerIdlingResource() {
+
+        IdlingRegistry.getInstance().register(mIdlingResource);
+    }
+
+    @After
+    public void unregisterIdlingResource() {
+        if (mIdlingResource != null) {
+            IdlingRegistry.getInstance().unregister(mIdlingResource);
+        }
+    }
+
     @Test
     public void mainActivityTest() {
 
@@ -36,10 +53,10 @@ public class MainActivityTest {
 
         ViewInteraction jokeTextView = onView(
                 allOf(withId(R.id.joke_textview), isDisplayed()));
-        jokeTextView.check(matches(textLengthNotZero()));
+        jokeTextView.check(matches(validateTextLength()));
     }
 
-    public static TypeSafeMatcher<View> textLengthNotZero() {
+    public static TypeSafeMatcher<View> validateTextLength() {
         return new TypeSafeMatcher<View>() {
             @Override
             protected boolean matchesSafely(View item) {
@@ -48,7 +65,7 @@ public class MainActivityTest {
 
             @Override
             public void describeTo(Description description) {
-                description.appendText("textLengthNotZero");
+                description.appendText("validateTextLength");
             }
         };
     }

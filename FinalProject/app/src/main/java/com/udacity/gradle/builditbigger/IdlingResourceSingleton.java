@@ -6,7 +6,7 @@ public class IdlingResourceSingleton {
 
     private static IdlingResourceSingleton mInstance;
     private final CountingIdlingResource mCountingIdlingResource;
-
+    private boolean isIdle;
     private IdlingResourceSingleton() {
         mCountingIdlingResource = new CountingIdlingResource("IdlingResourceSingleton");
     }
@@ -30,5 +30,14 @@ public class IdlingResourceSingleton {
 
     public CountingIdlingResource getIdlingResource() {
         return mCountingIdlingResource;
+    }
+
+    public void isIdle() {
+        isIdle = true;
+    }
+
+
+    public void isNotIdle() {
+        isIdle = false;
     }
 }

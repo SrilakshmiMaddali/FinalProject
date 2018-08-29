@@ -6,6 +6,10 @@ import com.google.api.server.spi.config.ApiNamespace;
 
 import javax.inject.Named;
 
+import sm.com.javajoker.Joker;
+import sm.com.javajoker.model.JokeData;
+import sm.com.javajoker.repo.ichdj.IchdjDownloadSeed;
+
 /** An endpoint class we are exposing */
 @Api(
         name = "myApi",
@@ -18,6 +22,7 @@ import javax.inject.Named;
 )
 public class MyEndpoint {
 
+    private final Joker source = new Joker();
     /** A simple endpoint method that takes a name and says Hi back */
     @ApiMethod(name = "sayHi")
     public MyBean sayHi(@Named("name") String name) {
@@ -29,6 +34,13 @@ public class MyEndpoint {
 
     @ApiMethod(name = "getMyJoke")
     public JokeBean getMyJoke() {
-        return null;
+        JokeData data = source.nextJoke(new IchdjDownloadSeed());
+
+        JokeBean response = new JokeBean();
+        response.setJokeBody(data.jokeBody);
+        response.setJokeFollowUp(data.optFollowup);
+        response.setJokeStatus(data.statusCode);
+
+        return response;
     }
 }

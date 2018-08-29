@@ -39,7 +39,6 @@ public class MainViewDataTest {
         Observer<JokeData> jokeDataObserver = jokeData -> jokeDataMutableLiveData.setValue(jokeData);
         MainViewData.getInstance().addObserver(jokeDataObserver);
         MainViewData.getInstance().getNextJoke();
-
         assert (jokeDataMutableLiveData.getValue() != null &&
                 jokeDataMutableLiveData.getValue().statusCode == JokeData.STATUS_OK);
     }
