@@ -172,7 +172,6 @@ public class MainActivityFragment extends Fragment {
     private void displayErrorSnackbar(String message) {
         setProgressBarVisible(false);
         setErrorMessageVisible(true);
-        //utils.summonSnackbarSelfClosing(getView(), message);
     }
 
     /**
